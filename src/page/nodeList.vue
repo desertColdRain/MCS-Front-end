@@ -2,7 +2,7 @@
   <div class="fillcontain">
     <head-top></head-top>
     <div class="table_container">
-      <el-table :data="nodeList" highlight-current-row style="width: 100%">
+      <el-table :data="nodeList" highlight-current-row   cell-style="font-weight: 500;" style="width: 100%;font-size:18px;">
         <el-table-column lable = '序号' type="index" width="100"> </el-table-column>
         <el-table-column property="ip" label="IP地址" width="220">
         </el-table-column>

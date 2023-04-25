@@ -2,9 +2,11 @@
     <div class="fillcontain">
         <head-top></head-top>
         <p class="explain_text">基于区块链的匿名信任评估系统</p>
-        <p class="explain_text">第一次登录的用户自动注册成为普通管理员</p>
-        <p class="explain_text">普通管理员可以添加，修改信息</p>
-        <p class="explain_text">超级管理员可以删除信息</p>
+        <p class="explain_text">这是一个基于区块链的匿名信任认证众包系统的后端部分。系统主要包含三部分</p>
+        <p class="explain_text">基于Intel SGX的密钥管理系统: https://github.com/desertColdRain/MCS-cloud-server</p>
+        <p class="explain_text">基于区块链的众包系统: https://github.com/desertColdRain/crowdsourcing-based-on-blockchain</p>
+		<p class="explain_text">客户端前端系统: https://github.com/desertColdRain/MCS-Front-end</p>
+		
     </div>
 </template>
 

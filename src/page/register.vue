@@ -95,11 +95,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .login {
-  width: 100%;
-  height: 740px;
   background: url("../assets/img/login.jpg") no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
   background-size: cover;
-  overflow: hidden;
+  position: fixed;
 }
 .login-wrap {
   border-radius: 15px;

@@ -6,14 +6,14 @@
 			<el-row :gutter="20" style="margin-bottom: 10px;">
                 <el-col :span="4"><div class="data_list today_head"><span class="data_num head">当日数据：</span></div></el-col>
 				<el-col :span="4"><div class="data_list"><span class="data_num">{{userCount}}</span> 新增用户</div></el-col>
-				<el-col :span="4"><div class="data_list"><span class="data_num">{{orderCount}}</span> 新增订单</div></el-col>
-                <el-col :span="4"><div class="data_list"><span class="data_num">{{adminCount}}</span> 新增管理员</div></el-col>
+				<el-col :span="4"><div class="data_list"><span class="data_num">{{orderCount}}</span> 新增区块</div></el-col>
+                <el-col :span="4"><div class="data_list"><span class="data_num">{{adminCount}}</span> 新增任务数</div></el-col>
 			</el-row>
             <el-row :gutter="20">
                 <el-col :span="4"><div class="data_list all_head"><span class="data_num head">总数据：</span></div></el-col>
                 <el-col :span="4"><div class="data_list"><span class="data_num">{{allUserCount}}</span> 注册用户</div></el-col>
-                <el-col :span="4"><div class="data_list"><span class="data_num">{{allOrderCount}}</span> 订单</div></el-col>
-                <el-col :span="4"><div class="data_list"><span class="data_num">{{allAdminCount}}</span> 管理员</div></el-col>
+                <el-col :span="4"><div class="data_list"><span class="data_num">{{allBlockCount}}</span> 区块数</div></el-col>
+                <el-col :span="4"><div class="data_list"><span class="data_num">{{allTaskCount}}</span> 任务数</div></el-col>
             </el-row>
 		</section>
 		<tendency :sevenDate='sevenDate' :sevenDay='sevenDay'></tendency>
@@ -29,11 +29,11 @@
     	data(){
     		return {
     			userCount: null,
-    			orderCount: null,
-                adminCount: null,
+    			blockCount: null,
+                taskCount: null,
                 allUserCount: null,
-                allOrderCount: null,
-                allAdminCount: null,
+                allBlockCount: null,
+                allTaskCount: null,
     			sevenDay: [],
     			sevenDate: [[],[],[]],
     		}
@@ -58,12 +58,18 @@
     			const today = dtime().format('YYYY-MM-DD')
     			Promise.all([userCount(today), orderCount(today), adminDayCount(today), getUserCount(), getOrderCount(), adminCount()])
     			.then(res => {
-    				this.userCount = res[0].count;
-    				this.orderCount = res[1].count;
-                    this.adminCount = res[2].count;
-                    this.allUserCount = res[3].count;
-                    this.allOrderCount = res[4].count;
-                    this.allAdminCount = res[5].count;
+					this.userCount = 0;
+    				//this.userCount = res[0].count;
+    				//this.orderCount = res[1].count;
+                    //this.adminCount = res[2].count;
+					this.orderCount = 2;
+                    this.adminCount = 3;
+                    //this.allUserCount = res[3].count;
+					this.allUserCount = 5;
+					//this.allBlockCount = res[4].count;
+					this.allBlockCount = 60;
+					this.allTaskCount = 87;
+                    //this.allAdminCount = res[5].count;
     			}).catch(err => {
     				console.log(err)
     			})

@@ -2,7 +2,7 @@
   <div class="fillcontain">
     <head-top></head-top>
     <div class="table_container">
-      <el-table :data="taskList" highlight-current-row style="width: 100%">
+      <el-table :data="taskList" highlight-current-row style="width: 100%;font-size:16px;">
         <el-table-column lable="任务id" width="150">
           <template slot-scope="scope">
             <span style="margin-left: 10px">{{ scope.row.taskId }}</span>
@@ -10,7 +10,7 @@
         </el-table-column>
         <el-table-column property="senderUsername" label="发布者" width="250">
         </el-table-column>
-        <el-table-column property="taskContent.requirements" label="任务要求" width="300">
+        <el-table-column property="taskContent.requirements" label="任务要求" width="450">
         </el-table-column>
         <el-table-column property="taskContent.bonus" label="奖励" width="200">
         </el-table-column>
@@ -86,7 +86,7 @@ export default {
 
           } else {
             console.log(res.data.code);
-            alert("获取节点列表失败！");
+            alert(res.data.msg);
           }
         })
         .catch((failResponse) => { });

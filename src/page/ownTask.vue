@@ -79,7 +79,7 @@ export default {
 
         .then((res) => {
           if (res.data.code === 200) {
-            console.log('获取任务成功')
+            console.log(res.data.msg)
             // console.log(res.data.data)
             this.task = res.data.data;
             console.log(this.task);
@@ -87,7 +87,7 @@ export default {
 
           } else {
             console.log(res.data.code);
-            alert("获取节点列表失败！");
+            alert(res.data.msg);
           }
         })
         .catch((failResponse) => { });

@@ -24,7 +24,6 @@ import store from "../store";
 store.commit("getToken");
 store.commit("getUsername");
 store.commit("getPubKey");
-console.log("Prof .Yan ");
 //console.log(store.state.user)
 const user = store.state.user;
 console.log(store.state.user);

@@ -2,19 +2,27 @@
   <div class="fillcontain">
     <head-top></head-top>
     <div class="table_container">
-      <el-table :data="blockchainList" highlight-current-row style="width: 100%">
+      <el-table :data="blockchainList" highlight-current-row style="width: 100%;font-size:18px;">
         <el-table-column label="区块高度" prop="index" width="100">
+         <template slot-scope="scope">
+            <span style="margin-left: 10px">{{ scope.row.index }}</span>
+          </template>
         </el-table-column>
 
-        <el-table-column property="preHash" label="前一区块的哈希" width="280">
+        <el-table-column property="preHash" label="前一区块的哈希" width="350">
         </el-table-column>
-        <el-table-column property="hash" label="区块哈希" width="280">
+        <el-table-column property="hash" label="区块哈希" width="350">
         </el-table-column>
-        <el-table-column property="generator" label="区块创建者" width="220">
+        <el-table-column property="generator" label="区块创建者地址" width="350">
         </el-table-column>
         <el-table-column property="timeStamp" label="时间戳" width="220">
         </el-table-column>
-        <el-table-column property="detail" label="详细信息" width="220">
+   
+        <el-table-column label="操作">
+          <template slot-scope="scope">
+            
+            <el-button type="text" size="mini" @click="blockDetail(scope.$index, scope.row)">查看区块信息</el-button>
+          </template>
         </el-table-column>
       </el-table>
       <div class="Pagination" style="text-align: left; margin-top: 10px">
@@ -77,7 +85,7 @@ export default {
               preHash: item.header.preHash === null ? "null" : item.header.preHash,
               hash: item.header.hash,
               timeStamp: item.header.timeStamp.value,
-              generator: item.header.nonce,
+              generator: item.header.generatorAddress,
             };
             this.blockchain.push(tableItem);
           });
@@ -85,10 +93,18 @@ export default {
           this.pagation.total = Object.keys(this.blockchain).length;
           console.log(this.count);
         } else {
-          console.log(res.data.code);
+          console.log(res.data);
           alert("查询区块链信息失败");
         }
       });
+    },
+    blockDetail(index,row){
+      this.$router.push({
+        path: '/blockDetail',
+        query:{
+          index: row.index
+        }
+      })
     },
     handleSizeChange(val) {
       this.pagation.pagesize = size

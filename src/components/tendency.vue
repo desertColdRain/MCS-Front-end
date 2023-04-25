@@ -33,7 +33,7 @@
                         trigger: 'axis'
                     },
                     legend: {
-                        data:['新注册用户', '新增订单', '新增管理员']
+                        data:['新注册用户', '新增区块', '新增任务数']
                     },
                     toolbox: {
                         show: true,
@@ -54,9 +54,9 @@
                     yAxis: [
                         {
                           type: 'value',
-                          name: '用户',
+                          name: '任务数',
                           min: 0,
-                          max: 200,
+                          max: 40,
                           position: 'left',
                           axisLine: {
                               lineStyle: {
@@ -69,9 +69,9 @@
                         },
                         {
                           type: 'value',
-                          name: '订单',
+                          name: '区块',
                           min: 0,
-                          max: 200,
+                          max: 40,
                           position: 'right',
                           axisLine: {
                               lineStyle: {
@@ -87,7 +87,8 @@
                         {
                             name:'新注册用户',
                             type:'line',
-                            data:this.sevenDate[0],
+                            //data:this.sevenDate[0],
+                            data:[2,0,0,0,2,1,0],
                             yAxisIndex: 1,
                             markPoint: {
                                 data: [
@@ -97,9 +98,10 @@
                             },
                         },
                         {
-                            name:'新增订单',
+                            name:'新增区块',
                             type:'line',
-                            data:this.sevenDate[1],
+                            //data:this.sevenDate[1],
+                            data:[5,6,7,2,0,10,2],
                             yAxisIndex: 1,
                             markPoint: {
                                 data: [
@@ -109,9 +111,10 @@
                             },
                         },
                         {
-                            name:'新增管理员',
+                            name:'新增任务数',
                             type:'line',
-                            data:this.sevenDate[2],
+                            //data:this.sevenDate[2],
+                            data:[6,10,15,6,20,8,3],
                             yAxisIndex: 1,
                             markPoint: {
                                 data: [

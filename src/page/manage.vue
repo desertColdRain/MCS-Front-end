@@ -8,10 +8,6 @@
 						<template slot="title"><i class="el-icon-document"></i>区块链相关信息</template>
 						<el-menu-item index="blockchain">区块链所有信息</el-menu-item>
 						<el-menu-item index="blockHeader">区块链头信息</el-menu-item>
-						<el-menu-item index="shopList">商家列表</el-menu-item>
-						<el-menu-item index="foodList">食品列表</el-menu-item>
-						<el-menu-item index="orderList">订单列表</el-menu-item>
-						
 					</el-submenu>
 					<el-submenu index="3">
 						<template slot="title"><i class="el-icon-plus"></i>任务相关</template>
@@ -28,7 +24,7 @@
 					
 					<el-submenu index="5">
 						<template slot="title"><i class="el-icon-setting"></i>设置</template>
-						<el-menu-item index="adminSet">管理员设置</el-menu-item>
+						<el-menu-item index="adminSet">个人设置</el-menu-item>
 						<!-- <el-menu-item index="sendMessage">发送通知</el-menu-item> -->
 					</el-submenu>
 					<el-submenu index="6">

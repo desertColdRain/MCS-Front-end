@@ -66,8 +66,9 @@ export default {
         })
         .then((res) => {
           if (res.data.code === 200) {
+            
             console.log(this.nodes.ip);
-            console.log("添加节点列表成功");
+            alert("添加节点列表成功");
             //this.nodes = res.data.data
             //console.log(this.nodes)
             //this.tableData.nodes.push(tableData.nodes)
